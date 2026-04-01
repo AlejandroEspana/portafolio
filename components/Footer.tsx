@@ -12,8 +12,8 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-4">
             <h3 className="text-[var(--color-text-main)] text-sm uppercase tracking-widest">Contacto</h3>
-            <a href="#" className="text-[var(--color-subtext)] hover:text-[var(--color-text-main)] transition-colors flex items-center gap-1">CV ↗</a>
-            <a href="#" className="text-[var(--color-subtext)] hover:text-[var(--color-text-main)] transition-colors flex items-center gap-1">LinkedIn ↗</a>
+            <a href="/docs/Hoja de Vida_AlejandroEspaña.pdf" download="Hoja de Vida_AlejandroEspaña.pdf" className="text-[var(--color-subtext)] hover:text-[var(--color-text-main)] transition-colors flex items-center gap-1">CV <span className="text-xs">↓</span></a>
+            <a href="https://www.linkedin.com/in/alejandro-españa-78b217331" target="_blank" rel="noopener noreferrer" className="text-[var(--color-subtext)] hover:text-[var(--color-text-main)] transition-colors flex items-center gap-1">LinkedIn ↗</a>
           </div>
         </div>
       </div>
