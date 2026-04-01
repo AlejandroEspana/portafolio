@@ -15,11 +15,21 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <main className="relative w-full text-[var(--color-text-main)] px-6 md:px-16 xl:pr-72 max-w-[1600px] mx-auto pb-32 pt-8 animate-in fade-in duration-500">
       
-      {/* Boton Back Fijo Arriba (Desktop) o Header (Mobile) */}
-      <div className="mb-12 lg:mb-0 lg:absolute lg:top-8 lg:left-8 z-10">
+      {/* Boton Back Fijado en la esquina flotando */}
+      <div className="fixed top-6 left-6 md:top-8 md:left-8 z-50 lg:hidden xl:block">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[#464545] transition-all bg-[#2c2b2b] border border-[#3e3d3d] px-6 py-2.5 rounded-full shadow-sm text-sm"
+          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[#464545] transition-all bg-[var(--color-background-main)] border border-[#3e3d3d] px-6 py-2.5 rounded-full shadow-lg text-sm backdrop-blur-sm"
+        >
+          <span className="text-lg">←</span> Back
+        </Link>
+      </div>
+
+      {/* Variante Fix-Header solo para el margen izquierdo en ciertas resoluciones intermedias para no cortar contenido */}
+      <div className="hidden lg:block xl:hidden sticky top-8 z-50 self-start mb-8">
+        <Link 
+          href="/" 
+          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[#464545] transition-all bg-[var(--color-background-main)] border border-[#3e3d3d] px-6 py-2.5 rounded-full shadow-lg text-sm backdrop-blur-sm"
         >
           <span className="text-lg">←</span> Back
         </Link>
