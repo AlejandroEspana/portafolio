@@ -1,6 +1,7 @@
 import { projects } from "../../../data/projects";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ProjectStickyNav from "../../../components/ProjectStickyNav";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -35,13 +36,8 @@ export default async function ProjectPage({ params }: Props) {
         </Link>
       </div>
 
-      {/* Sticky Right Nav (Desktop Only) */}
-      <nav className="hidden xl:flex flex-col fixed right-16 top-1/3 gap-8 text-sm tracking-widest uppercase font-['Protest_Revolution']">
-        <a href="#hero" className="text-[var(--color-text-main)] hover:opacity-80 transition-opacity">Contenido</a>
-        <a href="#descripcion" className="text-[var(--color-subtext)] hover:text-white transition-colors">Descripcion General</a>
-        <a href="#tecnologias" className="text-[var(--color-subtext)] hover:text-white transition-colors">Tecnologias</a>
-        <a href="#anexos" className="text-[var(--color-subtext)] hover:text-white transition-colors">Anexos</a>
-      </nav>
+      {/* Sticky Right Nav (Desktop Only) - Observer Component */}
+      <ProjectStickyNav />
 
       {/* 1. Hero Section */}
       <section id="hero" className="flex flex-col items-center justify-center text-center mt-8 lg:mt-12 w-full">
