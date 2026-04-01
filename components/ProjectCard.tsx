@@ -1,13 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface ProjectCardProps {
+  id: string;
   title: string;
   tagline: string;
 }
 
-export default function ProjectCard({ title, tagline }: ProjectCardProps) {
+export default function ProjectCard({ id, title, tagline }: ProjectCardProps) {
   return (
-    <div className="w-full block group cursor-pointer transition-transform duration-300 hover:-translate-y-2 focus-within:-translate-y-2 outline-none card-glow rounded-[2rem] mb-12">
+    <Link href={`/work/${id}`} className="w-full block group cursor-pointer transition-transform duration-300 hover:-translate-y-2 focus-within:-translate-y-2 outline-none card-glow rounded-[2rem] mb-12">
       <div className="w-full rounded-[2rem] border border-[#3e3d3d] bg-gradient-to-br from-[#2a2929] to-[#1e1d1d] p-8 md:p-12 flex flex-col transition-all duration-300 relative overflow-hidden group-hover:border-[#5a5959]">
         
         {/* Header section w/ Title & Arrow */}
@@ -31,6 +33,6 @@ export default function ProjectCard({ title, tagline }: ProjectCardProps) {
         </div>
         
       </div>
-    </div>
+    </Link>
   );
 }
