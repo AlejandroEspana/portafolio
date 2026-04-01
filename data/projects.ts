@@ -113,6 +113,11 @@ export const projects: ProjectDetails[] = [
     summary: ["Plataforma para inmobiliarias donde pueden gestionar sus catálogos, leads e información de compradores potenciales."],
     technologies: [{ category: "Frontend", items: ["Tailwind", "React"] }],
     links: [],
-    annexes: [],
+    annexes: [
+      { description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
+      { description: "" },
+      { description: "Un museo con modelos interactivos e informacion representadas en burbujas desplegables" },
+      { description: "" }
+    ],
   }
 ];
