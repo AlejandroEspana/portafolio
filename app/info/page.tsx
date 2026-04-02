@@ -19,7 +19,7 @@ export default function InfoPage() {
 
         {/* Esfera Superior (Generadora del Timeline) */}
         <div className="w-full flex justify-center relative h-16">
-          <div className="w-12 h-12 bg-[#DFDFDF] rounded-full shrink-0 z-10 card-glow flex items-center justify-center translate-y-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)]"></div>
+          <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)] translate-y-10"></div>
           {/* Línea que arranca desde el centro de la esfera */}
           <div className="absolute w-[2px] bg-[#3e3d3d] h-full left-1/2 -ml-[1px] top-16 z-0"></div>
         </div>
