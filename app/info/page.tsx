@@ -3,11 +3,11 @@ import { timeline, skills, testimonials, contacts, contactMessage } from "@/data
 export default function InfoPage() {
   return (
     <main className="w-full flex flex-col items-center pt-24 pb-32 animate-in fade-in duration-500 overflow-x-hidden">
-      
+
       {/* 1. Sobre Mi & Inicio del Timeline */}
       <section className="w-full max-w-4xl px-6 md:px-16 flex flex-col relative">
         <h1 className="text-3xl md:text-4xl text-[var(--color-text-main)] font-['Protest_Revolution'] tracking-widest mb-6">Sobre mi</h1>
-        
+
         <div className="flex flex-col gap-6 text-[var(--color-subtext)] text-sm md:text-base leading-relaxed font-['Protest_Revolution'] tracking-wider mb-24">
           <p>
             Construyo software con propósito. Soy estudiante de ingeniería de Software y me enfoco en transformar ideas complejas en soluciones claras, funcionales y escalables, combinando tecnologías emergentes como la realidad virtual y la inteligencia artificial en proyectos como PulmoMed. Me interesa crear experiencias que no solo funcionen, sino que realmente aporten valor, especialmente en entornos donde la tecnología puede marcar una diferencia real.
@@ -34,22 +34,20 @@ export default function InfoPage() {
           {timeline.map((item, index) => {
             const isLeft = item.side === "left";
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`relative w-full flex ${isLeft ? "justify-start md:justify-start" : "justify-start md:justify-end"} items-center`}
               >
                 {/* Desktop Dot: A los lados de la línea central */}
-                <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#DFDFDF] z-10 ${
-                  isLeft ? "right-[calc(50%+1.5rem)]" : "left-[calc(50%+1.5rem)]"
-                }`}></div>
-                
+                <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#DFDFDF] z-10 ${isLeft ? "right-[calc(50%+1.5rem)]" : "left-[calc(50%+1.5rem)]"
+                  }`}></div>
+
                 {/* Mobile Dot: Separado a la derecha de la línea lateral */}
                 <div className="md:hidden absolute left-[36px] w-4 h-4 rounded-full bg-[#DFDFDF] z-10 top-1/2 -translate-y-1/2"></div>
-                
+
                 {/* Content Box */}
-                <div className={`w-[calc(100%-60px)] md:w-[calc(50%-4rem)] ml-[60px] md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed ${
-                  isLeft ? "md:pr-0 md:text-left" : "md:pl-0 text-left"
-                } text-[var(--color-subtext)] text-sm md:text-base`}>
+                <div className={`w-[calc(100%-60px)] md:w-[calc(50%-4rem)] ml-[60px] md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed ${isLeft ? "md:pr-0 md:text-left" : "md:pl-0 text-left"
+                  } text-[var(--color-subtext)] text-sm md:text-base`}>
                   {item.date}: {item.description}
                 </div>
               </div>
@@ -67,7 +65,7 @@ export default function InfoPage() {
 
       {/* 3. Habilidades */}
       <section className="w-full max-w-5xl px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 font-['Protest_Revolution'] tracking-widest text-sm mb-48">
-        
+
         {/* Back */}
         <div className="flex flex-col gap-6">
           <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.back.title}</h2>
@@ -129,12 +127,12 @@ export default function InfoPage() {
       {/* 6. Contactame */}
       <section className="w-full max-w-4xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mt-16">
         <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-center border-b border-[#3e3d3d] pb-4 mx-auto max-w-max w-full">Contactame</h2>
-        
+
         <div className="flex flex-col md:flex-row gap-16 justify-between items-center text-center">
           <p className="w-full md:w-1/2 text-sm md:text-base text-[var(--color-subtext)] leading-loose">
             {contactMessage.text}
           </p>
-          
+
           <div className="w-full md:w-1/2 flex flex-col gap-6 text-[var(--color-subtext)] text-sm md:text-base">
             <p>{contactMessage.email}</p>
             <p>{contactMessage.location}</p>
