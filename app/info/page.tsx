@@ -38,11 +38,18 @@ export default function InfoPage() {
                 key={index} 
                 className={`relative w-full flex ${isLeft ? "justify-start md:justify-start" : "justify-start md:justify-end"} items-center`}
               >
-                {/* Dot */}
-                <div className="absolute left-[14px] md:left-1/2 w-4 h-4 rounded-full bg-[#DFDFDF] md:-ml-2 z-10"></div>
+                {/* Desktop Dot: A los lados de la línea central */}
+                <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#DFDFDF] z-10 ${
+                  isLeft ? "right-[calc(50%+1.5rem)]" : "left-[calc(50%+1.5rem)]"
+                }`}></div>
+                
+                {/* Mobile Dot: Separado a la derecha de la línea lateral */}
+                <div className="md:hidden absolute left-[36px] w-4 h-4 rounded-full bg-[#DFDFDF] z-10 top-1/2 -translate-y-1/2"></div>
                 
                 {/* Content Box */}
-                <div className={`w-[calc(100%-40px)] md:w-[45%] ml-10 md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 text-left"} text-[var(--color-subtext)] text-sm md:text-base`}>
+                <div className={`w-[calc(100%-60px)] md:w-[calc(50%-4rem)] ml-[60px] md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed ${
+                  isLeft ? "md:pr-0 md:text-left" : "md:pl-0 text-left"
+                } text-[var(--color-subtext)] text-sm md:text-base`}>
                   {item.date}: {item.description}
                 </div>
               </div>
