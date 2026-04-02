@@ -32,12 +32,11 @@ export default function Navbar() {
       {/* Mobile Top Row / Desktop Logo */}
       <div className="flex justify-between items-center w-full md:w-auto">
         
-        {/* Mobile: Work/Info Pill */}
         <div className="flex md:hidden bg-[#2c2b2b] rounded-full p-1 border border-[#3e3d3d]">
-          <Link href="/" className="px-5 py-2 rounded-full bg-[#464545] text-[var(--color-text-main)] text-sm transition-colors">
+          <Link href="/" className={`px-5 py-2 rounded-full text-sm transition-colors ${(pathname === '/' || pathname === '') ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
             Work
           </Link>
-          <Link href="#" className="px-5 py-2 rounded-full text-[var(--color-subtext)] hover:text-[var(--color-text-main)] text-sm transition-colors">
+          <Link href="/info" className={`px-5 py-2 rounded-full text-sm transition-colors ${pathname === '/info' ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
             Info
           </Link>
         </div>
@@ -95,10 +94,10 @@ export default function Navbar() {
 
       {/* Desktop Center Menu */}
       <div className="hidden md:flex bg-[#2c2b2b] rounded-full p-1 border border-[#3e3d3d]">
-        <Link href="/" className="px-6 py-2 rounded-full bg-[#464545] text-[var(--color-text-main)] text-sm transition-colors">
+        <Link href="/" className={`px-6 py-2 rounded-full text-sm transition-colors ${(pathname === '/' || pathname === '') ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
           Work
         </Link>
-        <Link href="#" className="px-6 py-2 rounded-full text-[var(--color-subtext)] hover:text-[var(--color-text-main)] text-sm transition-colors">
+        <Link href="/info" className={`px-6 py-2 rounded-full text-sm transition-colors ${pathname === '/info' ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
           Info
         </Link>
       </div>
