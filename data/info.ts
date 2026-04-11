@@ -79,6 +79,6 @@ export const contacts = [
 
 export const contactMessage = {
   text: "Gracias por llegar hasta aquí, si crees que puedo aportar valor a tu equipo o simplemente tienes una pregunta por hacerme, no dudes en escribirme y ¡haré todo lo posible para responderle!",
-  email: "alejcespana123@gmail.com",
+  email: "alejoespana123@gmail.com",
   location: "Pasto - Nariño - Colombia",
 };
