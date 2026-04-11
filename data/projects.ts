@@ -37,6 +37,7 @@ export const projects: ProjectDetails[] = [
       tasks: ["Scrum Manager", "desarrollador Unity", "Interaccion", "Interfaces"],
     },
     team: [
+      "Alejandro España",
       "Matheu Ruales Galvis",
       "Nicolas Pasmiño",
       "Daniel Fernando Arteaga",
@@ -54,7 +55,7 @@ export const projects: ProjectDetails[] = [
       { category: "Estado", items: ["En desarrollo"] },
     ],
     links: [
-      { label: "Github ↗", url: "#" }
+
     ],
     annexes: [
       { description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
@@ -86,7 +87,10 @@ export const projects: ProjectDetails[] = [
     duration: "Completado",
     summary: ["Plataforma SaaS para gestionar publicaciones simultáneas en varias redes sociales a través de una sola interfaz."],
     technologies: [{ category: "Tecnologías", items: ["React", "Node.js"] }],
-    links: [],
+    links: [
+      { label: "Github Frontend ↗", url: "https://github.com/matheuruales/Front_AnyPost" },
+      { label: "Github Backend ↗", url: "https://github.com/matheuruales/Back_AnyPost" }
+    ],
     annexes: [],
   },
   {
