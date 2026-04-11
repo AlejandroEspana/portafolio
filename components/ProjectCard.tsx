@@ -5,9 +5,10 @@ interface ProjectCardProps {
   id: string;
   title: string;
   tagline: string;
+  heroImage?: string;
 }
 
-export default function ProjectCard({ id, title, tagline }: ProjectCardProps) {
+export default function ProjectCard({ id, title, tagline, heroImage }: ProjectCardProps) {
   return (
     <Link href={`/work/${id}`} className="w-full block group cursor-pointer transition-transform duration-300 hover:-translate-y-2 focus-within:-translate-y-2 outline-none card-glow rounded-[2rem] mb-12">
       <div className="w-full rounded-[2rem] border border-[#3e3d3d] bg-gradient-to-br from-[#2a2929] to-[#1e1d1d] p-8 md:p-12 flex flex-col transition-all duration-300 relative overflow-hidden group-hover:border-[#5a5959]">
@@ -15,8 +16,8 @@ export default function ProjectCard({ id, title, tagline }: ProjectCardProps) {
         {/* Header section w/ Title & Arrow */}
         <div className="flex justify-between items-start z-10 w-full mb-8 gap-4">
           <div className="flex flex-col gap-2 max-w-2xl">
-            <h2 className="text-4xl md:text-5xl text-[var(--color-text-main)] tracking-wide">{title}</h2>
-            <p className="text-[var(--color-subtext)] text-lg md:text-xl leading-relaxed mt-2">{tagline}</p>
+            <h2 className="text-4xl md:text-5xl text-[var(--color-text-main)] tracking-wide font-['Protest_Revolution']">{title}</h2>
+            <p className="text-[var(--color-subtext)] text-lg md:text-xl leading-relaxed mt-2 font-['Protest_Revolution'] tracking-wider">{tagline}</p>
           </div>
           
           <div className="opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2 transform shrink-0 mt-2">
@@ -29,7 +30,11 @@ export default function ProjectCard({ id, title, tagline }: ProjectCardProps) {
 
         {/* Image Placeholder */}
         <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-[#141414] rounded-2xl border border-[#2c2b2b] mt-4 flex items-center justify-center relative overflow-hidden group-hover:border-[#3e3d3d] transition-colors">
-           <span className="text-[var(--color-subtext)] opacity-50 uppercase tracking-[0.2em] text-sm font-sans font-bold">Image Placeholder</span>
+           {heroImage ? (
+             <img src={heroImage} alt={title} className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500 hover:scale-105" />
+           ) : (
+             <span className="text-[var(--color-subtext)] opacity-50 uppercase tracking-[0.2em] text-sm font-sans font-bold">Image Placeholder</span>
+           )}
         </div>
         
       </div>
