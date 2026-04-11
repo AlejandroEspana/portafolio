@@ -101,23 +101,5 @@ export const projects: ProjectDetails[] = [
     technologies: [{ category: "Stack", items: ["Next.js", "PostgreSQL"] }],
     links: [],
     annexes: [],
-  },
-  {
-    id: "fullhouse",
-    title: "FullHouse",
-    subtitle: "PropTech - 2025",
-    tagline: "Web de gestion de inmobiliarias",
-    role: { title: "Frontend Developer", tasks: ["UI/UX"] },
-    team: ["Alejandro España"],
-    duration: "En Mantenimiento",
-    summary: ["Plataforma para inmobiliarias donde pueden gestionar sus catálogos, leads e información de compradores potenciales."],
-    technologies: [{ category: "Frontend", items: ["Tailwind", "React"] }],
-    links: [],
-    annexes: [
-      { description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
-      { description: "" },
-      { description: "Un museo con modelos interactivos e informacion representadas en burbujas desplegables" },
-      { description: "" }
-    ],
   }
 ];
