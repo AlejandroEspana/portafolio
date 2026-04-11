@@ -32,6 +32,7 @@ export const projects: ProjectDetails[] = [
     title: "PulmoMed",
     subtitle: "UCC - Realidad Virtual - mayo 2026",
     tagline: "Un proyecto de Realidad Virtual y Cancer de Pulmon",
+    heroImage: "/Pulmomed.svg",
     role: {
       title: "Investigador/desarrollador",
       tasks: ["Scrum Manager", "desarrollador Unity", "Interaccion", "Interfaces"],
@@ -58,10 +59,8 @@ export const projects: ProjectDetails[] = [
 
     ],
     annexes: [
-      { description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
-      { description: "" },
-      { description: "Un museo con modelos interactivos e informacion representadas en burbujas desplegables" },
-      { description: "" }
+      { imageUrl: "/Pulmomed1.svg", description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
+      { imageUrl: "/Pulmomed2.svg", description: "Un museo con modelos interactivos e informacion representadas en burbujas desplegables" }
     ],
   },
   {
@@ -69,19 +68,24 @@ export const projects: ProjectDetails[] = [
     title: "TutorialVR",
     subtitle: "App - Realidad Virtual - 2025",
     tagline: "App de aprendizaje VR para conocer el uso e interaccion de la tecnologia",
+    heroImage: "/Tutorial.svg",
     role: { title: "Desarrollador Principal", tasks: ["Desarrollo General"] },
     team: ["Alejandro España"],
     duration: "Completado",
     summary: ["Proyecto interactivo para ayudar a los nuevos usuarios a familiarizarse con la realidad virtual. Utilizando la Gamificacion como pilar principal dentro del proyecto, orientando al usuario con modelos interactivos para su aprendizaje"],
     technologies: [{ category: "Motor", items: ["Unity"] }],
     links: [],
-    annexes: [],
+    annexes: [
+      { imageUrl: "/Tutorial1.svg", description: "Primera vista de la interaccion del tutorial" },
+      { imageUrl: "/Tutorial2.svg", description: "Mapeo y reconocimiento del entorno VR" }
+    ],
   },
   {
     id: "anypost",
     title: "AnyPost",
     subtitle: "Web Automation - 2025",
     tagline: "Web para automatizar el post en diferentes redes sociales con un solo click",
+    heroImage: "/anypost-landing-overview.svg",
     role: { title: "Fullstack Developer", tasks: ["Frontend", "Backend"] },
     team: ["Alejandro España", "Matheu Ruales Galvis", "Felipe Narvaez"],
     duration: "Completado",
@@ -91,7 +95,9 @@ export const projects: ProjectDetails[] = [
       { label: "Github Frontend ↗", url: "https://github.com/matheuruales/Front_AnyPost" },
       { label: "Github Backend ↗", url: "https://github.com/matheuruales/Back_AnyPost" }
     ],
-    annexes: [],
+    annexes: [
+      { imageUrl: "/anypost-dashboard-panel.svg", description: "Panel interactivo de control de publicaciones multiplataforma" }
+    ],
   },
   {
     id: "goldengymapp",
