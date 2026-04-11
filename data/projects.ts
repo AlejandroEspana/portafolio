@@ -112,12 +112,16 @@ export const projects: ProjectDetails[] = [
     title: "GoldenGymApp",
     subtitle: "Software Gestión - 2025",
     tagline: "Web para la gestion de entrada y analisis de datos de un Gym",
+    heroImage: "/GoldenGym.svg",
     role: { title: "Backend Engineer", tasks: ["Integracion IOT"] },
     team: ["Alejandro España", "Daniel Fernando Arteaga", "Sebastian Fajardo"],
     duration: "Completado",
     summary: ["Sistema integral para la administración de gimnasios, control de accesos y métricas de crecimiento. Orientado a la optimización de procesos administrativos y de gestión de datos. utilizando IOT para el control de acceso biometrico."],
     technologies: [{ category: "Stack Backend", items: ["Python", "FastApi", "PostgreSQL"] }, { category: "Stack Frontend", items: ["React"] }],
     links: [],
-    annexes: [],
+    annexes: [
+      { imageUrl: "/GoldenGym1.svg", description: "Dashboard principal" },
+      { imageUrl: "/GoldenGym2.svg", description: "Vista de control de accesos IoT e interfaces" }
+    ],
   }
 ];
