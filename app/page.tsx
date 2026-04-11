@@ -33,6 +33,7 @@ export default function Home() {
             id={project.id}
             title={project.title} 
             tagline={project.tagline} 
+            heroImage={project.heroImage}
           />
         ))}
       </section>
