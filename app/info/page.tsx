@@ -63,8 +63,8 @@ export default function InfoPage() {
         <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)]"></div>
       </section>
 
-      {/* 3. Habilidades */}
-      <section className="w-full max-w-5xl px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 font-['Protest_Revolution'] tracking-widest text-sm mb-48">
+      {/* 3. Habilidades (Duras y Blandas) */}
+      <section className="w-full max-w-6xl px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 font-['Protest_Revolution'] tracking-widest text-sm mb-48">
 
         {/* Back */}
         <div className="flex flex-col gap-6">
@@ -90,11 +90,19 @@ export default function InfoPage() {
           </ul>
         </div>
 
-        {/* Otros */}
+        {/* Otros (Herramientas / Infraestructura) */}
         <div className="flex flex-col gap-6">
           <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.otros.title}</h2>
-          <ul className="flex flex-col gap-4 text-[var(--color-subtext)]">
+          <ul className="flex flex-col gap-4 text-[var(--color-subtext)] break-words">
             {skills.otros.items.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+
+        {/* Blandas */}
+        <div className="flex flex-col gap-6">
+          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.habilidadesBlandas.title}</h2>
+          <ul className="flex flex-col gap-4 text-[var(--color-subtext)] break-words">
+            {skills.habilidadesBlandas.items.map((item, i) => <li key={i}>{item}</li>)}
           </ul>
         </div>
 
