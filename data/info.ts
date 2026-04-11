@@ -46,6 +46,11 @@ export const skills = {
     title: "Otros",
     items: ["Unity", "Postgress", "Mongo", "AWS", "AZURE", "Git", "Github", "Docker"],
   },
+  habilidadesBlandas: {
+    title: "Habilidades Blandas",
+    items: ["Trabajo en equipo", "Comunicacion", "Resolucion de problemas", "Adaptabilidad", "Liderazgo", "Creatividad", "Ingles"],
+  }
+
 };
 
 export const testimonials = [
