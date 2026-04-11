@@ -73,7 +73,11 @@ export const projects: ProjectDetails[] = [
     team: ["Alejandro España"],
     duration: "Completado",
     summary: ["Proyecto interactivo para ayudar a los nuevos usuarios a familiarizarse con la realidad virtual. Utilizando la Gamificacion como pilar principal dentro del proyecto, orientando al usuario con modelos interactivos para su aprendizaje"],
-    technologies: [{ category: "Motor", items: ["Unity"] }],
+    technologies: [
+      { category: "Motor", items: ["Unity"] },
+      { category: "Lenguaje", items: ["C#"] },
+      { category: "Estado", items: ["Completado"] },
+    ],
     links: [],
     annexes: [
       { imageUrl: "/Tutorial1.svg", description: "Primera vista de la interaccion del tutorial" },
@@ -90,7 +94,11 @@ export const projects: ProjectDetails[] = [
     team: ["Alejandro España", "Matheu Ruales Galvis", "Felipe Narvaez"],
     duration: "Completado",
     summary: ["Plataforma SaaS para gestionar publicaciones simultáneas en varias redes sociales a través de una sola interfaz."],
-    technologies: [{ category: "Tecnologías", items: ["React", "Node.js", "Java-Postgress"] }],
+    technologies: [
+      { category: "Tecnologías", items: ["React", "Node.js", "Java-Postgress"] },
+      { category: "Metodologia", items: ["Scrum"] },
+      { category: "Estado", items: ["Completado"] },
+    ],
     links: [
       { label: "Github Frontend ↗", url: "https://github.com/matheuruales/Front_AnyPost" },
       { label: "Github Backend ↗", url: "https://github.com/matheuruales/Back_AnyPost" }
