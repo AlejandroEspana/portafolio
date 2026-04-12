@@ -6,11 +6,12 @@ interface ProjectCardProps {
   title: string;
   tagline: string;
   heroImage?: string;
+  lang: string;
 }
 
-export default function ProjectCard({ id, title, tagline, heroImage }: ProjectCardProps) {
+export default function ProjectCard({ id, title, tagline, heroImage, lang }: ProjectCardProps) {
   return (
-    <Link href={`/work/${id}`} className="w-full block group cursor-pointer transition-transform duration-300 hover:-translate-y-2 focus-within:-translate-y-2 outline-none card-glow rounded-[2rem] mb-12">
+    <Link href={`/${lang}/work/${id}`} className="w-full block group cursor-pointer transition-transform duration-300 hover:-translate-y-2 focus-within:-translate-y-2 outline-none card-glow rounded-[2rem] mb-12">
       <div className="w-full rounded-[2rem] border border-[var(--color-border-main)] bg-gradient-to-br from-[var(--color-grad-start)] to-[var(--color-grad-end)] p-8 md:p-12 flex flex-col transition-all duration-300 relative overflow-hidden group-hover:border-[var(--color-border-hover)]">
         
         {/* Header section w/ Title & Arrow */}
