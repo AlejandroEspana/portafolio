@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'MinecraftEnchantment';
+  src: url('/fonts/minecraft-enchantment.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 
 :root {
@@ -117,4 +124,124 @@ html ::-webkit-scrollbar-thumb:hover {
     scrollbar-width: thin;
     scrollbar-color: var(--color-border-hover) var(--color-background-main);
   }
+}
+
+/* ======================================= */
+/* MINECRAFT EASTER EGG MODE (ESTÉTICA PERFECTA) */
+/* ======================================= */
+.minecraft-mode {
+  cursor: crosshair !important;
+}
+
+.minecraft-mode, .minecraft-mode body {
+  /* Default Dark Mode: Deepslate Emerald/Diamond Ore */
+  background-color: #2b2b2b !important;
+  background-image: 
+    radial-gradient(circle at 20% 30%, #55FF55 3%, transparent 4%),
+    radial-gradient(circle at 75% 80%, #55FFFF 4%, transparent 5%),
+    radial-gradient(circle at 40% 70%, #55FF55 2%, transparent 3%),
+    radial-gradient(circle at 80% 20%, #1a1a1a 8%, transparent 10%),
+    linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222), 
+    linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222) !important;
+  background-size: 64px 64px, 64px 64px, 64px 64px, 64px 64px, 32px 32px, 32px 32px !important;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 16px 16px !important;
+  image-rendering: pixelated !important;
+  
+  /* Core Variables */
+  --color-border-main: #1D1D1D !important;
+  --color-border-hover: #0a0a0a !important;
+  --color-background-main: rgba(0, 0, 0, 0.6) !important;
+  --color-surface: #444 !important; /* Deepslate Stone style */
+  
+  /* Enchantment Green Text */
+  --color-text-main: #55FF55 !important; 
+  --color-subtext: #1b7a1b !important; 
+  --color-hover: #333 !important;
+  --color-accent-main: #55FF55 !important;
+  --color-accent-sphere: #AA00AA !important; /* Magic purple */
+}
+
+/* Modo Claro: Dirt Block */
+html.light.minecraft-mode, html.light.minecraft-mode body {
+  background-color: #8b5f3d !important;
+  background-image: 
+    linear-gradient(45deg, #744e31 25%, transparent 25%, transparent 75%, #744e31 75%, #744e31), 
+    linear-gradient(45deg, #744e31 25%, transparent 25%, transparent 75%, #744e31 75%, #744e31) !important;
+  background-size: 64px 64px !important;
+  background-position: 0 0, 32px 32px !important;
+
+  --color-border-main: #3D3D3D !important;
+  --color-surface: #8B8B8B !important; 
+  --color-background-main: rgba(0, 0, 0, 0.4) !important;
+  --color-hover: #505050 !important;
+}
+
+/* Base font and rigid styles */
+.minecraft-mode * {
+  font-family: 'MinecraftEnchantment', 'Courier New', monospace !important;
+  border-radius: 0px !important; 
+  letter-spacing: 2px !important;
+  text-transform: lowercase !important; /* Standard Galactic usually looks best when uniformly styled */
+  box-shadow: none !important;
+}
+
+/* Sharp Hard Drop Shadows for text to make it legible and game-like */
+.minecraft-mode h1, .minecraft-mode h2, .minecraft-mode h3, 
+.minecraft-mode a, .minecraft-mode p, .minecraft-mode span {
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.9) !important;
+  line-height: 1.8 !important;
+}
+
+/* Containers becoming Stone/Cobblestone */
+.minecraft-mode section div[class*="rounded"], .minecraft-mode nav, .minecraft-mode header, .minecraft-mode .card-glow {
+  background-color: #7B7B7B !important; /* Stone */
+  border: 4px solid #1E1E1E !important;
+  border-top-color: #B2B2B2 !important;
+  border-left-color: #B2B2B2 !important;
+  border-bottom-color: #1E1E1E !important;
+  border-right-color: #1E1E1E !important;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Overriding Next Images inside Project Cards to look pixelated */
+.minecraft-mode img {
+  image-rendering: pixelated !important;
+  filter: contrast(1.2) saturate(1.5) !important;
+  border: 4px solid #1E1E1E !important;
+}
+
+/* Floating Spheres conversion to Nether Portals/Magic shapes */
+.minecraft-mode .sphere-glow {
+  background: #AA00AA !important;
+  border: 4px solid #440044 !important;
+  box-shadow: 0 0 20px #AA00AA, inset 0 0 10px #000 !important;
+}
+
+/* Buttons and Links */
+.minecraft-mode button, .minecraft-mode a[href*="/work"] {
+  background-color: #7B7B7B !important;
+  color: #FFFFFF !important;
+  border: 4px solid #1E1E1E !important;
+  border-top-color: #B2B2B2 !important;
+  border-left-color: #B2B2B2 !important;
+  text-shadow: 2px 2px 0px #3F3F3F !important;
+  transition: transform 0.1s !important;
+}
+.minecraft-mode button:active {
+  border-top-color: #1E1E1E !important;
+  border-left-color: #1E1E1E !important;
+  border-bottom-color: #B2B2B2 !important;
+  border-right-color: #B2B2B2 !important;
+  transform: translate(2px, 2px) !important;
+}
+
+/* Custom Scrollbar for Minecraft Mode */
+.minecraft-mode::-webkit-scrollbar-track {
+  background: #744e31 !important;
+  border-left: 2px solid #000 !important;
+}
+.minecraft-mode::-webkit-scrollbar-thumb {
+  background: #B2B2B2 !important;
+  border: 2px solid #1E1E1E !important;
+  border-radius: 0px !important;
 }
