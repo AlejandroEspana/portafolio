@@ -1,9 +1,64 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
+:root {
+  /* DARK MODE (Default) */
+  --bg-main: #1B1A1A;
+  --bg-surface: #2c2b2b;
+  --bg-surface-elevated: #141414;
+  --bg-hover: #464545;
+  --text-main: #DFDFDF;
+  --text-sub: #979292;
+  --border-main: #3e3d3d;
+  --border-hover: #5a5959;
+  --accent-main: #C0C0C0;
+  --accent-sphere: #DFDFDF;
+  --grad-start: #2a2929;
+  --grad-end: #1e1d1d;
+  --navbar-bg: #2c2b2b;
+
+  --shadow-text: 0px 0px 21.9px rgba(181, 158, 158, 0.47);
+  --shadow-card: 0px 20px 20px 40px rgba(123, 123, 123, 0.03);
+  --shadow-sphere: 0 0 40px 10px rgba(223, 223, 223, 0.3);
+}
+
+.light {
+  /* LIGHT MODE */
+  --bg-main: #F5F5F7;
+  --bg-surface: #E5E5EA;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-hover: #D1D1D6;
+  --text-main: #1D1D1F;
+  --text-sub: #86868B;
+  --border-main: #D1D1D6;
+  --border-hover: #AEAEB2;
+  --accent-main: #1D1D1F;
+  --accent-sphere: #1D1D1F;
+  --grad-start: #FAFAFA;
+  --grad-end: #F0F0F0;
+  --navbar-bg: #E5E5EA;
+
+  --shadow-text: 0px 0px 21.9px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0px 20px 20px 40px rgba(0, 0, 0, 0.03);
+  --shadow-sphere: 0 0 20px 5px rgba(0, 0, 0, 0.15);
+}
+
 @theme inline {
-  --color-background-main: #1B1A1A;
-  --color-text-main: #DFDFDF;
-  --color-subtext: #979292;
+  --color-background-main: var(--bg-main);
+  --color-surface: var(--bg-surface);
+  --color-surface-elevated: var(--bg-surface-elevated);
+  --color-hover: var(--bg-hover);
+  --color-text-main: var(--text-main);
+  --color-subtext: var(--text-sub);
+  --color-border-main: var(--border-main);
+  --color-border-hover: var(--border-hover);
+  --color-accent-main: var(--accent-main);
+  --color-accent-sphere: var(--accent-sphere);
+  --color-grad-start: var(--grad-start);
+  --color-grad-end: var(--grad-end);
+  --color-navbar-bg: var(--navbar-bg);
+
   --font-protest: "Protest Revolution", sans-serif;
 }
 
@@ -13,6 +68,7 @@ body {
   font-family: var(--font-protest);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .protest-revolution-regular {
@@ -23,12 +79,14 @@ body {
 
 @layer utilities {
   .text-glow {
-    /* Blur 21.9px, Color #B59E9E, Opacity 47% */
-    text-shadow: 0px 0px 21.9px rgba(181, 158, 158, 0.47);
+    text-shadow: var(--shadow-text);
   }
 
   .card-glow {
-    /* Desplazamiento en Y modificado, intensidad y spread reducidos */
-    box-shadow: 0px 20px 20px 40px rgba(123, 123, 123, 0.03);
+    box-shadow: var(--shadow-card);
+  }
+
+  .sphere-glow {
+    box-shadow: var(--shadow-sphere);
   }
 }
