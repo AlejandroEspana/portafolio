@@ -90,3 +90,31 @@ body {
     box-shadow: var(--shadow-sphere);
   }
 }
+
+/* Custom Scrollbar Styles */
+html ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html ::-webkit-scrollbar-track {
+  background: var(--color-background-main);
+  border-radius: 4px;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+  border-radius: 4px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-subtext);
+}
+
+/* Firefox Support */
+@supports (-moz-appearance:none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-hover) var(--color-background-main);
+  }
+}
