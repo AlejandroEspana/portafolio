@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-[#3e3d3d] mt-24 pt-12 pb-16 px-8 flex flex-col items-center text-center gap-12 font-['Protest_Revolution'] tracking-widest">
+    <footer className="w-full border-t border-[var(--color-border-main)] mt-24 pt-12 pb-16 px-8 flex flex-col items-center text-center gap-12 font-['Protest_Revolution'] tracking-widest">
       <div className="flex flex-col md:flex-row justify-center gap-16 md:gap-32 w-full">
         <div className="flex flex-col gap-4 items-center">
           <h3 className="text-[var(--color-text-main)] text-sm uppercase">Principal</h3>
