@@ -1,7 +1,20 @@
-import { projects } from "@/data/projects";
+import { getProjectsData } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const projects = getProjectsData(lang);
+  
+  const text = lang === 'en' ? {
+    quote: "Every line of code has a purpose. If it doesn't, it doesn't exist",
+    role: "Developer in Progress",
+    uni: "Trained at UCC"
+  } : {
+    quote: "Cada línea de código tiene a un propósito. Si no lo tiene, no existe",
+    role: "Desarrollador en Proceso",
+    uni: "Formado en la UCC"
+  };
+
   return (
     <div className="flex flex-col w-full px-4 md:px-16 mt-16 mb-24">
       
@@ -11,16 +24,16 @@ export default function Home() {
           
           <div className="flex flex-col gap-6 md:gap-8 z-10 w-full md:w-3/4">
             <h1 className="text-4xl md:text-6xl text-[var(--color-text-main)] leading-normal md:leading-relaxed tracking-wider text-glow text-left max-w-2xl">
-              Cada línea de código tiene a un propósito. Si no lo tiene, no existe
+              {text.quote}
             </h1>
           </div>
           
           <div className="flex flex-col items-end text-right w-full gap-2">
             <h2 className="text-2xl md:text-3xl text-[var(--color-text-main)] tracking-widest text-glow opacity-80">
-              Desarrollador en Proceso
+              {text.role}
             </h2>
             <p className="text-xl md:text-2xl text-[var(--color-subtext)] tracking-wider">
-              Formado en la UCC
+              {text.uni}
             </p>
           </div>
           
@@ -36,6 +49,7 @@ export default function Home() {
             title={project.title} 
             tagline={project.tagline} 
             heroImage={project.heroImage}
+            lang={lang}
           />
         ))}
       </section>
