@@ -63,21 +63,21 @@ export const infoData = {
     testimonials: [
       {
         name: "Luis Carlos Revelo Tovar",
-        text: "Aqui va el Testimonio",
+        text: "Alejandro es un desarrollador excepcional. Su capacidad para resolver problemas complejos y su adaptabilidad lo hacen un elemento invaluable en cualquier equipo. Ha sido un placer colaborar con él.",
       },
       {
         name: "Daniel Fernando Arteaga",
-        text: "Aqui va el Testimonio",
+        text: "Trabajar con Alejandro en el desarrollo de software ha sido una experiencia muy grata. Su enfoque metódico y su excelente destreza técnica garantizan siempre resultados de altísima calidad.",
       },
       {
         name: "Oscar Andrés Osorio",
-        text: "Aqui va el Testimonio",
+        text: "La creatividad y el liderazgo de Alejandro marcan la diferencia. Siempre está buscando formas innovadoras de optimizar procesos y aplicar nuevas tecnologías con un impacto notable.",
       },
     ],
     contacts: [
-      { name: "Luciana Cuenca", relation: "Portafolio" },
-      { name: "Carlos Burbano", relation: "Portafolio" },
-      { name: "Matheu Ruales", relation: "Portafolio" },
+      { name: "Luciana Cuenca", relation: "Portafolio", link: "https://mi-portafolio-sigma-amber.vercel.app/" },
+      { name: "Carlos Burbano", relation: "Portafolio", link: "https://portafolio-eosin-nine.vercel.app/" },
+      { name: "Matheu Ruales", relation: "Portafolio", link: "https://matheu.site" },
       { name: "Bayron Felipe", relation: "Portafolio" },
       { name: "Luis Esteban Castillo", relation: "Portafolio" },
       { name: "Daniel Fernando Arteaga", relation: "Portafolio" },
@@ -154,21 +154,21 @@ export const infoData = {
     testimonials: [
       {
         name: "Luis Carlos Revelo Tovar",
-        text: "Testimonial goes here",
+        text: "Alejandro is an exceptional developer. His ability to solve complex problems and his adaptability make him an invaluable asset to any team. It has been a pleasure collaborating with him.",
       },
       {
         name: "Daniel Fernando Arteaga",
-        text: "Testimonial goes here",
+        text: "Working with Alejandro on software development has been a very pleasant experience. His methodical approach and excellent technical skills always guarantee the highest quality results.",
       },
       {
         name: "Oscar Andrés Osorio",
-        text: "Testimonial goes here",
+        text: "Alejandro's creativity and leadership make a real difference. He is always looking for innovative ways to optimize processes and apply new technologies with a notable impact.",
       },
     ],
     contacts: [
-      { name: "Luciana Cuenca", relation: "Portfolio" },
-      { name: "Carlos Burbano", relation: "Portfolio" },
-      { name: "Matheu Ruales", relation: "Portfolio" },
+      { name: "Luciana Cuenca", relation: "Portfolio", link: "https://mi-portafolio-sigma-amber.vercel.app/" },
+      { name: "Carlos Burbano", relation: "Portfolio", link: "https://portafolio-eosin-nine.vercel.app/" },
+      { name: "Matheu Ruales", relation: "Portfolio", link: "https://matheu.site" },
       { name: "Bayron Felipe", relation: "Portfolio" },
       { name: "Luis Esteban Castillo", relation: "Portfolio" },
       { name: "Daniel Fernando Arteaga", relation: "Portfolio" },

@@ -128,12 +128,21 @@ export default async function InfoPage({ params }: { params: Promise<{ lang: str
       <section className="w-full max-w-5xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mt-16">
         <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-left md:text-center">{partnersTitle}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16 mx-auto w-full max-w-3xl">
-          {contacts.map((contact, i) => (
-            <div key={i} className="flex flex-col gap-2 text-center md:text-left items-center md:items-start w-full">
-              <h3 className="text-base text-[var(--color-text-main)]">{contact.name}</h3>
-              <p className="text-sm text-[var(--color-subtext)]">{contact.relation}</p>
-            </div>
-          ))}
+          {contacts.map((contact, i) => {
+            const link = (contact as any).link;
+            return (
+              <div key={i} className="flex flex-col gap-2 text-center md:text-left items-center md:items-start w-full">
+                <h3 className="text-base text-[var(--color-text-main)]">{contact.name}</h3>
+                {link ? (
+                  <a href={link} target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--color-subtext)] hover:text-white transition-colors underline underline-offset-4 decoration-[var(--color-border-hover)] flex items-center gap-1">
+                    {contact.relation} ↗
+                  </a>
+                ) : (
+                  <p className="text-sm text-[var(--color-subtext)]">{contact.relation}</p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
