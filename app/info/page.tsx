@@ -19,16 +19,16 @@ export default function InfoPage() {
 
         {/* Esfera Superior (Generadora del Timeline) */}
         <div className="w-full flex md:justify-center relative h-16 mt-8">
-          <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)] translate-y-10 max-md:mr-auto"></div>
+          <div className="w-12 h-12 bg-[var(--color-accent-sphere)] rounded-full z-10 sphere-glow translate-y-10 max-md:mr-auto"></div>
           {/* Línea que arranca desde el centro de la esfera */}
-          <div className="absolute w-[2px] bg-[#3e3d3d] h-full max-md:left-[24px] md:left-1/2 -ml-[1px] top-16 z-0"></div>
+          <div className="absolute w-[2px] bg-[var(--color-border-main)] h-full max-md:left-[24px] md:left-1/2 -ml-[1px] top-16 z-0"></div>
         </div>
       </section>
 
       {/* 2. Timeline Core */}
       <section className="w-full max-w-5xl px-6 md:px-16 flex flex-col items-center relative py-12">
         {/* Línea Central Continua */}
-        <div className="absolute w-[2px] bg-[#3e3d3d] h-full max-md:left-[48px] md:left-1/2 -ml-[1px] top-0 z-0"></div>
+        <div className="absolute w-[2px] bg-[var(--color-border-main)] h-full max-md:left-[48px] md:left-1/2 -ml-[1px] top-0 z-0"></div>
 
         <div className="w-full flex flex-col gap-16 md:gap-32 my-12">
           {timeline.map((item, index) => {
@@ -39,11 +39,11 @@ export default function InfoPage() {
                 className={`relative w-full flex ${isLeft ? "md:justify-start" : "md:justify-end"} items-center`}
               >
                 {/* Desktop Dot: A los lados de la línea central */}
-                <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#DFDFDF] z-10 ${isLeft ? "right-[calc(50%+1.5rem)]" : "left-[calc(50%+1.5rem)]"
+                <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--color-accent-sphere)] z-10 ${isLeft ? "right-[calc(50%+1.5rem)]" : "left-[calc(50%+1.5rem)]"
                   }`}></div>
 
                 {/* Mobile Dot: Directamente sobre la línea en la izquierda */}
-                <div className="md:hidden absolute left-[16px] w-4 h-4 rounded-full bg-[#DFDFDF] z-10 top-1/2 -translate-y-1/2"></div>
+                <div className="md:hidden absolute left-[16px] w-4 h-4 rounded-full bg-[var(--color-accent-sphere)] z-10 top-1/2 -translate-y-1/2"></div>
 
                 {/* Content Box */}
                 <div className={`w-[calc(100%-48px)] md:w-[calc(50%-4rem)] ml-[48px] md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed text-[var(--color-subtext)] text-sm md:text-base ${
@@ -60,8 +60,8 @@ export default function InfoPage() {
       {/* Esfera Inferior (Fin del Timeline) */}
       <section className="w-full flex md:justify-center relative mb-48 px-6 md:px-16 max-w-5xl">
         {/* Extensión final de la línea para conectar con la esfera */}
-        <div className="absolute w-[2px] bg-[#3e3d3d] h-24 max-md:left-[48px] md:left-1/2 -ml-[1px] -top-24 z-0"></div>
-        <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)] max-md:mr-auto"></div>
+        <div className="absolute w-[2px] bg-[var(--color-border-main)] h-24 max-md:left-[48px] md:left-1/2 -ml-[1px] -top-24 z-0"></div>
+        <div className="w-12 h-12 bg-[var(--color-accent-sphere)] rounded-full z-10 sphere-glow max-md:mr-auto"></div>
       </section>
 
       {/* 3. Habilidades (Duras y Blandas) */}
@@ -69,7 +69,7 @@ export default function InfoPage() {
 
         {/* Back */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.back.title}</h2>
+          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[var(--color-border-main)] pb-2 mb-2">{skills.back.title}</h2>
           <ul className="flex flex-col gap-4 text-[var(--color-subtext)]">
             {skills.back.languages.map((lang, i) => <li key={i}>{lang}</li>)}
           </ul>
@@ -81,7 +81,7 @@ export default function InfoPage() {
 
         {/* Front */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.front.title}</h2>
+          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[var(--color-border-main)] pb-2 mb-2">{skills.front.title}</h2>
           <ul className="flex flex-col gap-4 text-[var(--color-subtext)]">
             {skills.front.languages.map((lang, i) => <li key={i}>{lang}</li>)}
           </ul>
@@ -93,7 +93,7 @@ export default function InfoPage() {
 
         {/* Otros (Herramientas / Infraestructura) */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.otros.title}</h2>
+          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[var(--color-border-main)] pb-2 mb-2">{skills.otros.title}</h2>
           <ul className="flex flex-col gap-4 text-[var(--color-subtext)] break-words">
             {skills.otros.items.map((item, i) => <li key={i}>{item}</li>)}
           </ul>
@@ -101,7 +101,7 @@ export default function InfoPage() {
 
         {/* Blandas */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[#3e3d3d] pb-2 mb-2">{skills.habilidadesBlandas.title}</h2>
+          <h2 className="text-xl text-[var(--color-text-main)] max-w-max border-b border-[var(--color-border-main)] pb-2 mb-2">{skills.habilidadesBlandas.title}</h2>
           <ul className="flex flex-col gap-4 text-[var(--color-subtext)] break-words">
             {skills.habilidadesBlandas.items.map((item, i) => <li key={i}>{item}</li>)}
           </ul>
@@ -111,7 +111,7 @@ export default function InfoPage() {
 
       {/* 4. Testimonios */}
       <section className="w-full max-w-3xl px-6 md:px-16 flex flex-col gap-16 mb-48 font-['Protest_Revolution'] tracking-wider">
-        <h2 className="text-2xl text-[var(--color-text-main)] border-b border-[#3e3d3d] pb-2 max-w-max mb-4">Testimonios</h2>
+        <h2 className="text-2xl text-[var(--color-text-main)] border-b border-[var(--color-border-main)] pb-2 max-w-max mb-4">Testimonios</h2>
         {testimonials.map((testimonio, i) => (
           <div key={i} className="flex flex-col gap-2">
             <h3 className="text-lg text-[var(--color-text-main)]">{testimonio.name}</h3>
@@ -135,7 +135,7 @@ export default function InfoPage() {
 
       {/* 6. Contactame */}
       <section className="w-full max-w-4xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mt-16">
-        <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-center border-b border-[#3e3d3d] pb-4 mx-auto max-w-max w-full">Contactame</h2>
+        <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-center border-b border-[var(--color-border-main)] pb-4 mx-auto max-w-max w-full">Contactame</h2>
 
         <div className="flex flex-col md:flex-row gap-16 justify-between items-center text-center">
           <p className="w-full md:w-1/2 text-sm md:text-base text-[var(--color-subtext)] leading-loose">
