@@ -20,7 +20,7 @@ export default async function ProjectPage({ params }: Props) {
       <div className="fixed top-6 left-6 md:top-8 md:left-8 z-50 lg:hidden xl:block">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[#464545] transition-all bg-[var(--color-background-main)] border border-[#3e3d3d] px-6 py-2.5 rounded-full shadow-lg text-sm backdrop-blur-sm"
+          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[var(--color-hover)] transition-all bg-[var(--color-background-main)] border border-[var(--color-border-main)] px-6 py-2.5 rounded-full shadow-lg text-sm backdrop-blur-sm"
         >
           <span className="text-lg">←</span> Back
         </Link>
@@ -30,7 +30,7 @@ export default async function ProjectPage({ params }: Props) {
       <div className="hidden lg:block xl:hidden sticky top-8 z-50 self-start mb-8">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[#464545] transition-all bg-[var(--color-background-main)] border border-[#3e3d3d] px-6 py-2.5 rounded-full shadow-lg text-sm backdrop-blur-sm"
+          className="inline-flex items-center gap-2 text-[var(--color-text-main)] hover:text-white hover:bg-[var(--color-hover)] transition-all bg-[var(--color-background-main)] border border-[var(--color-border-main)] px-6 py-2.5 rounded-full shadow-lg text-sm backdrop-blur-sm"
         >
           <span className="text-lg">←</span> Back
         </Link>
@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: Props) {
         </p>
 
         {/* Aspect Video Main Placeholder */}
-        <div className="w-full aspect-video bg-[#2c2b2b] border border-[#3e3d3d] rounded-[2rem] mt-16 flex items-center justify-center card-glow relative overflow-hidden">
+        <div className="w-full aspect-video bg-[var(--color-surface)] border border-[var(--color-border-main)] rounded-[2rem] mt-16 flex items-center justify-center card-glow relative overflow-hidden">
           {project.heroImage ? (
             <img src={project.heroImage} alt={project.title} className="object-cover w-full h-full" />
           ) : (
@@ -59,13 +59,13 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       {/* 2. Descripcion General */}
-      <section id="descripcion" className="flex flex-col lg:flex-row gap-16 lg:gap-32 mt-32 mb-32 border-t border-[#3e3d3d]/50 pt-24">
+      <section id="descripcion" className="flex flex-col lg:flex-row gap-16 lg:gap-32 mt-32 mb-32 border-t border-[var(--color-border-main)]/50 pt-24">
         {/* Left Col */}
         <div className="w-full lg:w-1/3 flex flex-col gap-14 font-['Protest_Revolution'] tracking-wider">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl text-[var(--color-text-main)]">Mi Rol</h2>
             <div>
-              <p className="text-[var(--color-text-main)] text-lg border-b border-[#3e3d3d] pb-2 inline-block mb-3">{project.role.title}</p>
+              <p className="text-[var(--color-text-main)] text-lg border-b border-[var(--color-border-main)] pb-2 inline-block mb-3">{project.role.title}</p>
               <ul className="list-disc pl-5 mt-2 text-[var(--color-subtext)] flex flex-col gap-2 text-sm leading-relaxed">
                 {project.role.tasks.map((task, i) => (
                   <li key={i}>{task}</li>
@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       {/* 3. Tecnologias */}
-      <section id="tecnologias" className="flex flex-col lg:flex-row gap-16 lg:gap-32 mb-32 border-t border-[#3e3d3d]/50 pt-24">
+      <section id="tecnologias" className="flex flex-col lg:flex-row gap-16 lg:gap-32 mb-32 border-t border-[var(--color-border-main)]/50 pt-24">
         {/* Left Col */}
         <div className="w-full lg:w-1/3 flex flex-col gap-12 font-['Protest_Revolution'] tracking-wider">
           <h2 className="text-3xl text-[var(--color-text-main)] mb-2">Tecnologias</h2>
@@ -123,7 +123,7 @@ export default async function ProjectPage({ params }: Props) {
           {project.links.length > 0 ? (
             <div className="flex flex-col gap-4">
               {project.links.map((link, i) => (
-                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[var(--color-subtext)] hover:text-white transition-colors text-sm underline underline-offset-8 decoration-[#3e3d3d] flex items-center gap-2 max-w-max">
+                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[var(--color-subtext)] hover:text-white transition-colors text-sm underline underline-offset-8 decoration-[var(--color-border-main)] flex items-center gap-2 max-w-max">
                   {link.label}
                 </a>
               ))}
@@ -135,7 +135,7 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       {/* 4. Anexos */}
-      <section id="anexos" className="border-t border-[#3e3d3d]/50 pt-24 flex flex-col mb-12">
+      <section id="anexos" className="border-t border-[var(--color-border-main)]/50 pt-24 flex flex-col mb-12">
           <h2 className="text-3xl font-['Protest_Revolution'] tracking-wider mb-16 text-center lg:text-left text-[var(--color-text-main)]">Anexos</h2>
           
           <div className={`grid gap-12 lg:gap-16 w-full ${
@@ -143,7 +143,7 @@ export default async function ProjectPage({ params }: Props) {
           }`}>
              {project.annexes.map((anexo, i) => (
                <div key={i} className="flex flex-col 2xl:flex-row gap-6 lg:gap-8 items-center 2xl:items-start w-full group">
-                 <div className="w-full 2xl:w-1/2 min-h-[200px] aspect-video bg-[#2c2b2b] border border-[#3e3d3d] rounded-[1.5rem] flex items-center justify-center shadow-md relative overflow-hidden shrink-0 group-hover:border-[#5a5959] transition-colors duration-300">
+                 <div className="w-full 2xl:w-1/2 min-h-[200px] aspect-video bg-[var(--color-surface)] border border-[var(--color-border-main)] rounded-[1.5rem] flex items-center justify-center shadow-md relative overflow-hidden shrink-0 group-hover:border-[var(--color-border-hover)] transition-colors duration-300">
                    {anexo.imageUrl ? (
                      <img src={anexo.imageUrl} alt="Anexo" className="object-cover w-full h-full" />
                    ) : (
