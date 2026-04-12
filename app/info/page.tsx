@@ -18,36 +18,37 @@ export default function InfoPage() {
         </div>
 
         {/* Esfera Superior (Generadora del Timeline) */}
-        <div className="w-full flex justify-center relative h-16">
-          <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)] translate-y-10"></div>
+        <div className="w-full flex md:justify-center relative h-16 mt-8">
+          <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)] translate-y-10 max-md:mr-auto"></div>
           {/* Línea que arranca desde el centro de la esfera */}
-          <div className="absolute w-[2px] bg-[#3e3d3d] h-full left-1/2 -ml-[1px] top-16 z-0"></div>
+          <div className="absolute w-[2px] bg-[#3e3d3d] h-full max-md:left-[24px] md:left-1/2 -ml-[1px] top-16 z-0"></div>
         </div>
       </section>
 
       {/* 2. Timeline Core */}
       <section className="w-full max-w-5xl px-6 md:px-16 flex flex-col items-center relative py-12">
         {/* Línea Central Continua */}
-        <div className="absolute w-[2px] bg-[#3e3d3d] h-full left-1/2 md:left-1/2 left-[20px] -ml-[1px] top-0 z-0"></div>
+        <div className="absolute w-[2px] bg-[#3e3d3d] h-full max-md:left-[48px] md:left-1/2 -ml-[1px] top-0 z-0"></div>
 
-        <div className="w-full flex flex-col gap-24 md:gap-32 my-12">
+        <div className="w-full flex flex-col gap-16 md:gap-32 my-12">
           {timeline.map((item, index) => {
             const isLeft = item.side === "left";
             return (
               <div
                 key={index}
-                className={`relative w-full flex ${isLeft ? "justify-start md:justify-start" : "justify-start md:justify-end"} items-center`}
+                className={`relative w-full flex ${isLeft ? "md:justify-start" : "md:justify-end"} items-center`}
               >
                 {/* Desktop Dot: A los lados de la línea central */}
                 <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#DFDFDF] z-10 ${isLeft ? "right-[calc(50%+1.5rem)]" : "left-[calc(50%+1.5rem)]"
                   }`}></div>
 
-                {/* Mobile Dot: Separado a la derecha de la línea lateral */}
-                <div className="md:hidden absolute left-[36px] w-4 h-4 rounded-full bg-[#DFDFDF] z-10 top-1/2 -translate-y-1/2"></div>
+                {/* Mobile Dot: Directamente sobre la línea en la izquierda */}
+                <div className="md:hidden absolute left-[16px] w-4 h-4 rounded-full bg-[#DFDFDF] z-10 top-1/2 -translate-y-1/2"></div>
 
                 {/* Content Box */}
-                <div className={`w-[calc(100%-60px)] md:w-[calc(50%-4rem)] ml-[60px] md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed ${isLeft ? "md:pr-0 md:text-left" : "md:pl-0 text-left"
-                  } text-[var(--color-subtext)] text-sm md:text-base`}>
+                <div className={`w-[calc(100%-48px)] md:w-[calc(50%-4rem)] ml-[48px] md:ml-0 font-['Protest_Revolution'] tracking-wider leading-relaxed text-[var(--color-subtext)] text-sm md:text-base ${
+                  isLeft ? "md:pr-0 md:text-left text-left" : "md:pl-0 text-left"
+                }`}>
                   {item.date}: {item.description}
                 </div>
               </div>
@@ -57,10 +58,10 @@ export default function InfoPage() {
       </section>
 
       {/* Esfera Inferior (Fin del Timeline) */}
-      <section className="w-full flex justify-center relative mb-48">
+      <section className="w-full flex md:justify-center relative mb-48 px-6 md:px-16 max-w-5xl">
         {/* Extensión final de la línea para conectar con la esfera */}
-        <div className="absolute w-[2px] bg-[#3e3d3d] h-24 left-[20px] md:left-1/2 -ml-[1px] -top-24 z-0"></div>
-        <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)]"></div>
+        <div className="absolute w-[2px] bg-[#3e3d3d] h-24 max-md:left-[48px] md:left-1/2 -ml-[1px] -top-24 z-0"></div>
+        <div className="w-12 h-12 bg-[#DFDFDF] rounded-full z-10 shadow-[0_0_40px_10px_rgba(223,223,223,0.3)] max-md:mr-auto"></div>
       </section>
 
       {/* 3. Habilidades (Duras y Blandas) */}
