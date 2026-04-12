@@ -95,13 +95,6 @@ export default function ProjectStickyNav({ lang }: { lang: string }) {
         </ul>
       </nav>
       
-      {/* Back button shortcut */}
-      <Link 
-        href={`/${lang}`}
-        className="w-full text-center py-3 bg-[var(--color-surface)] hover:bg-[var(--color-hover)] border border-[var(--color-border-main)] text-[var(--color-text-main)] rounded-xl font-['Protest_Revolution'] tracking-widest transition-colors shadow-md text-sm"
-      >
-        ← {lang === 'en' ? 'Back' : 'Atras'}
-      </Link>
     </div>
   );
 }
