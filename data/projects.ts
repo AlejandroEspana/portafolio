@@ -26,102 +26,203 @@ export interface ProjectDetails {
   annexes: AnnexItem[];
 }
 
-export const projects: ProjectDetails[] = [
-  {
-    id: "pulmomed",
-    title: "PulmoMed",
-    subtitle: "UCC - Realidad Virtual - mayo 2026",
-    tagline: "Un proyecto de Realidad Virtual y Cancer de Pulmon",
-    heroImage: "/Pulmomed.svg",
-    role: {
-      title: "Investigador/desarrollador",
-      tasks: ["Scrum Manager", "desarrollador Unity", "Interaccion", "Interfaces"],
+export const projectsData = {
+  es: [
+    {
+      id: "pulmomed",
+      title: "PulmoMed",
+      subtitle: "UCC - Realidad Virtual - mayo 2026",
+      tagline: "Un proyecto de Realidad Virtual y Cancer de Pulmon",
+      heroImage: "/Pulmomed.svg",
+      role: {
+        title: "Investigador/desarrollador",
+        tasks: ["Scrum Manager", "desarrollador Unity", "Interaccion", "Interfaces"],
+      },
+      team: [
+        "Alejandro España",
+        "Matheu Ruales Galvis",
+        "Nicolas Pasmiño",
+        "Daniel Fernando Arteaga",
+      ],
+      duration: "2 años / aun en desarrollo",
+      summary: [
+        "PulmoMed es un software educativo que utiliza realidad virtual e inteligencia artificial para mejorar la enseñanza del cáncer de pulmón, permitiendo a los estudiantes interactuar con simulaciones del crecimiento y la metástasis tumoral en un entorno inmersivo.",
+        "Se diseñó como una solución para superar las limitaciones de los métodos tradicionales, integrando tecnologías como Unity y Python bajo una arquitectura escalable.",
+        "Su implementación busca fortalecer la formación médica, mejorar la comprensión clínica y contribuir a la reducción de diagnósticos tardíos en Colombia."
+      ],
+      technologies: [
+        { category: "Motor Principal de Desarrollo", items: ["Unity"] },
+        { category: "Lenguaje IA/Backend", items: ["Python / FastApi", "C#"] },
+        { category: "Metodología Ágil de Desarrollo", items: ["Scrum"] },
+        { category: "Estado", items: ["En desarrollo"] },
+      ],
+      links: [],
+      annexes: [
+        { imageUrl: "/Pulmomed1.svg", description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
+        { imageUrl: "/Pulmomed2.svg", description: "Un museo con modelos interactivos e informacion representadas en burbujas desplegables" }
+      ],
     },
-    team: [
-      "Alejandro España",
-      "Matheu Ruales Galvis",
-      "Nicolas Pasmiño",
-      "Daniel Fernando Arteaga",
-    ],
-    duration: "2 años / aun en desarrollo",
-    summary: [
-      "PulmoMed es un software educativo que utiliza realidad virtual e inteligencia artificial para mejorar la enseñanza del cáncer de pulmón, permitiendo a los estudiantes interactuar con simulaciones del crecimiento y la metástasis tumoral en un entorno inmersivo.",
-      "Se diseñó como una solución para superar las limitaciones de los métodos tradicionales, integrando tecnologías como Unity y Python bajo una arquitectura escalable.",
-      "Su implementación busca fortalecer la formación médica, mejorar la comprensión clínica y contribuir a la reducción de diagnósticos tardíos en Colombia."
-    ],
-    technologies: [
-      { category: "Motor Principal de Desarrollo", items: ["Unity"] },
-      { category: "Lenguaje IA/Backend", items: ["Python / FastApi", "C#"] },
-      { category: "Metodología Ágil de Desarrollo", items: ["Scrum"] },
-      { category: "Estado", items: ["En desarrollo"] },
-    ],
-    links: [
+    {
+      id: "tutorialvr",
+      title: "TutorialVR",
+      subtitle: "App - Realidad Virtual - 2025",
+      tagline: "App de aprendizaje VR para conocer el uso e interaccion de la tecnologia",
+      heroImage: "/Tutorial.svg",
+      role: { title: "Desarrollador Principal", tasks: ["Desarrollo General"] },
+      team: ["Alejandro España"],
+      duration: "Completado",
+      summary: ["Proyecto interactivo para ayudar a los nuevos usuarios a familiarizarse con la realidad virtual. Utilizando la Gamificacion como pilar principal dentro del proyecto, orientando al usuario con modelos interactivos para su aprendizaje"],
+      technologies: [
+        { category: "Motor", items: ["Unity"] },
+        { category: "Lenguaje", items: ["C#"] },
+        { category: "Estado", items: ["Completado"] },
+      ],
+      links: [],
+      annexes: [
+        { imageUrl: "/Tutorial1.svg", description: "Primera vista de la interaccion del tutorial" },
+        { imageUrl: "/Tutorial2.svg", description: "Mapeo y reconocimiento del entorno VR" }
+      ],
+    },
+    {
+      id: "anypost",
+      title: "AnyPost",
+      subtitle: "Web Automation - 2025",
+      tagline: "Web para automatizar el post en diferentes redes sociales con un solo click",
+      heroImage: "/anypost-landing-overview.svg",
+      role: { title: "Fullstack Developer", tasks: ["Frontend", "Backend"] },
+      team: ["Alejandro España", "Matheu Ruales Galvis", "Felipe Narvaez"],
+      duration: "Completado",
+      summary: ["Plataforma SaaS para gestionar publicaciones simultáneas en varias redes sociales a través de una sola interfaz. Se desarrollo con el fin de facilitar el trabajo a los community managers y empresas que manejan varias redes sociales."],
+      technologies: [
+        { category: "Tecnologías", items: ["React", "Node.js", "Java-Postgress", "n8n"] },
+        { category: "Metodologia", items: ["Scrum"] },
+        { category: "Estado", items: ["Completado"] },
+      ],
+      links: [
+        { label: "Github Frontend ↗", url: "https://github.com/matheuruales/Front_AnyPost" },
+        { label: "Github Backend ↗", url: "https://github.com/matheuruales/Back_AnyPost" }
+      ],
+      annexes: [
+        { imageUrl: "/anypost-dashboard-panel.svg", description: "Panel interactivo de control de publicaciones multiplataforma" }
+      ],
+    },
+    {
+      id: "goldengymapp",
+      title: "GoldenGymApp",
+      subtitle: "Software Gestión - 2025",
+      tagline: "Web para la gestion de entrada y analisis de datos de un Gym",
+      heroImage: "/GoldenGym.svg",
+      role: { title: "Backend Engineer", tasks: ["Integracion IOT"] },
+      team: ["Alejandro España", "Daniel Fernando Arteaga", "Sebastian Fajardo"],
+      duration: "Completado",
+      summary: ["Sistema integral para la administración de gimnasios, control de accesos y métricas de crecimiento. Orientado a la optimización de procesos administrativos y de gestión de datos. utilizando IOT para el control de acceso biometrico."],
+      technologies: [{ category: "Stack Backend", items: ["Python", "FastApi", "PostgreSQL"] }, { category: "Stack Frontend", items: ["React"] }],
+      links: [],
+      annexes: [
+        { imageUrl: "/GoldenGym1.svg", description: "Dashboard principal" },
+        { imageUrl: "/GoldenGym2.svg", description: "Vista de control de accesos IoT e interfaces" }
+      ],
+    }
+  ],
+  en: [
+    {
+      id: "pulmomed",
+      title: "PulmoMed",
+      subtitle: "UCC - Virtual Reality - May 2026",
+      tagline: "A Virtual Reality and Lung Cancer Project",
+      heroImage: "/Pulmomed.svg",
+      role: {
+        title: "Researcher/Developer",
+        tasks: ["Scrum Manager", "Unity Developer", "Interaction", "Interfaces"],
+      },
+      team: [
+        "Alejandro España",
+        "Matheu Ruales Galvis",
+        "Nicolas Pasmiño",
+        "Daniel Fernando Arteaga",
+      ],
+      duration: "2 years / Still in development",
+      summary: [
+        "PulmoMed is educational software that uses virtual reality and artificial intelligence to improve the teaching of lung cancer, allowing students to interact with simulations of tumor growth and metastasis in an immersive environment.",
+        "It was designed as a solution to overcome the limitations of traditional methods, integrating technologies like Unity and Python under a scalable architecture.",
+        "Its implementation seeks to strengthen medical training, improve clinical understanding, and contribute to reducing late diagnoses in Colombia."
+      ],
+      technologies: [
+        { category: "Main Development Engine", items: ["Unity"] },
+        { category: "AI/Backend Language", items: ["Python / FastApi", "C#"] },
+        { category: "Agile Development Methodology", items: ["Scrum"] },
+        { category: "Status", items: ["In Development"] },
+      ],
+      links: [],
+      annexes: [
+        { imageUrl: "/Pulmomed1.svg", description: "A 3D visualization of the lung model, interactive and realistic with animations and modular structuring." },
+        { imageUrl: "/Pulmomed2.svg", description: "A museum with interactive models and information represented in pop-up bubbles" }
+      ],
+    },
+    {
+      id: "tutorialvr",
+      title: "TutorialVR",
+      subtitle: "App - Virtual Reality - 2025",
+      tagline: "VR learning app to understand the use and interaction of the technology",
+      heroImage: "/Tutorial.svg",
+      role: { title: "Lead Developer", tasks: ["General Development"] },
+      team: ["Alejandro España"],
+      duration: "Completed",
+      summary: ["Interactive project to help new users familiarize themselves with virtual reality. Relying on Gamification as a core pillar within the project, guiding the user with interactive models for their learning"],
+      technologies: [
+        { category: "Engine", items: ["Unity"] },
+        { category: "Language", items: ["C#"] },
+        { category: "Status", items: ["Completed"] },
+      ],
+      links: [],
+      annexes: [
+        { imageUrl: "/Tutorial1.svg", description: "First view of the tutorial interaction" },
+        { imageUrl: "/Tutorial2.svg", description: "Mapping and recognition of the VR environment" }
+      ],
+    },
+    {
+      id: "anypost",
+      title: "AnyPost",
+      subtitle: "Web Automation - 2025",
+      tagline: "Web platform to automate posts across different social networks with a single click",
+      heroImage: "/anypost-landing-overview.svg",
+      role: { title: "Fullstack Developer", tasks: ["Frontend", "Backend"] },
+      team: ["Alejandro España", "Matheu Ruales Galvis", "Felipe Narvaez"],
+      duration: "Completed",
+      summary: ["SaaS platform to manage simultaneous publications across multiple social networks through a single interface. It was developed to facilitate the work of community managers and companies handling several social networks."],
+      technologies: [
+        { category: "Technologies", items: ["React", "Node.js", "Java-PostgreSQL", "n8n"] },
+        { category: "Methodology", items: ["Scrum"] },
+        { category: "Status", items: ["Completed"] },
+      ],
+      links: [
+        { label: "Github Frontend ↗", url: "https://github.com/matheuruales/Front_AnyPost" },
+        { label: "Github Backend ↗", url: "https://github.com/matheuruales/Back_AnyPost" }
+      ],
+      annexes: [
+        { imageUrl: "/anypost-dashboard-panel.svg", description: "Interactive multi-platform publication control panel" }
+      ],
+    },
+    {
+      id: "goldengymapp",
+      title: "GoldenGymApp",
+      subtitle: "Management Software - 2025",
+      tagline: "Web app for managing gym access and data analytics",
+      heroImage: "/GoldenGym.svg",
+      role: { title: "Backend Engineer", tasks: ["IoT Integration"] },
+      team: ["Alejandro España", "Daniel Fernando Arteaga", "Sebastian Fajardo"],
+      duration: "Completed",
+      summary: ["Comprehensive system for gym administration, access control, and growth metrics. Aimed at optimizing administrative processes and data management, using IoT for biometric access control."],
+      technologies: [{ category: "Backend Stack", items: ["Python", "FastApi", "PostgreSQL"] }, { category: "Frontend Stack", items: ["React"] }],
+      links: [],
+      annexes: [
+        { imageUrl: "/GoldenGym1.svg", description: "Main Dashboard" },
+        { imageUrl: "/GoldenGym2.svg", description: "Hardware IoT access control view and interfaces" }
+      ],
+    }
+  ]
+};
 
-    ],
-    annexes: [
-      { imageUrl: "/Pulmomed1.svg", description: "Una visualizacion 3D del modelo pulmonar, interactuable y realista con animaciones y estructuracion modular." },
-      { imageUrl: "/Pulmomed2.svg", description: "Un museo con modelos interactivos e informacion representadas en burbujas desplegables" }
-    ],
-  },
-  {
-    id: "tutorialvr",
-    title: "TutorialVR",
-    subtitle: "App - Realidad Virtual - 2025",
-    tagline: "App de aprendizaje VR para conocer el uso e interaccion de la tecnologia",
-    heroImage: "/Tutorial.svg",
-    role: { title: "Desarrollador Principal", tasks: ["Desarrollo General"] },
-    team: ["Alejandro España"],
-    duration: "Completado",
-    summary: ["Proyecto interactivo para ayudar a los nuevos usuarios a familiarizarse con la realidad virtual. Utilizando la Gamificacion como pilar principal dentro del proyecto, orientando al usuario con modelos interactivos para su aprendizaje"],
-    technologies: [
-      { category: "Motor", items: ["Unity"] },
-      { category: "Lenguaje", items: ["C#"] },
-      { category: "Estado", items: ["Completado"] },
-    ],
-    links: [],
-    annexes: [
-      { imageUrl: "/Tutorial1.svg", description: "Primera vista de la interaccion del tutorial" },
-      { imageUrl: "/Tutorial2.svg", description: "Mapeo y reconocimiento del entorno VR" }
-    ],
-  },
-  {
-    id: "anypost",
-    title: "AnyPost",
-    subtitle: "Web Automation - 2025",
-    tagline: "Web para automatizar el post en diferentes redes sociales con un solo click",
-    heroImage: "/anypost-landing-overview.svg",
-    role: { title: "Fullstack Developer", tasks: ["Frontend", "Backend"] },
-    team: ["Alejandro España", "Matheu Ruales Galvis", "Felipe Narvaez"],
-    duration: "Completado",
-    summary: ["Plataforma SaaS para gestionar publicaciones simultáneas en varias redes sociales a través de una sola interfaz. Se desarrollo con el fin de facilitar el trabajo a los community managers y empresas que manejan varias redes sociales."],
-    technologies: [
-      { category: "Tecnologías", items: ["React", "Node.js", "Java-Postgress", "n8n"] },
-      { category: "Metodologia", items: ["Scrum"] },
-      { category: "Estado", items: ["Completado"] },
-    ],
-    links: [
-      { label: "Github Frontend ↗", url: "https://github.com/matheuruales/Front_AnyPost" },
-      { label: "Github Backend ↗", url: "https://github.com/matheuruales/Back_AnyPost" }
-    ],
-    annexes: [
-      { imageUrl: "/anypost-dashboard-panel.svg", description: "Panel interactivo de control de publicaciones multiplataforma" }
-    ],
-  },
-  {
-    id: "goldengymapp",
-    title: "GoldenGymApp",
-    subtitle: "Software Gestión - 2025",
-    tagline: "Web para la gestion de entrada y analisis de datos de un Gym",
-    heroImage: "/GoldenGym.svg",
-    role: { title: "Backend Engineer", tasks: ["Integracion IOT"] },
-    team: ["Alejandro España", "Daniel Fernando Arteaga", "Sebastian Fajardo"],
-    duration: "Completado",
-    summary: ["Sistema integral para la administración de gimnasios, control de accesos y métricas de crecimiento. Orientado a la optimización de procesos administrativos y de gestión de datos. utilizando IOT para el control de acceso biometrico."],
-    technologies: [{ category: "Stack Backend", items: ["Python", "FastApi", "PostgreSQL"] }, { category: "Stack Frontend", items: ["React"] }],
-    links: [],
-    annexes: [
-      { imageUrl: "/GoldenGym1.svg", description: "Dashboard principal" },
-      { imageUrl: "/GoldenGym2.svg", description: "Vista de control de accesos IoT e interfaces" }
-    ],
-  }
-];
+export function getProjectsData(lang: string): ProjectDetails[] {
+  return projectsData[lang as keyof typeof projectsData] || projectsData.es;
+}
