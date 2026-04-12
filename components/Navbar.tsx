@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -32,43 +33,46 @@ export default function Navbar() {
       {/* Mobile Top Row / Desktop Logo */}
       <div className="flex justify-between items-center w-full md:w-auto">
         
-        <div className="flex md:hidden bg-[#2c2b2b] rounded-full p-1 border border-[#3e3d3d]">
-          <Link href="/" className={`px-5 py-2 rounded-full text-sm transition-colors ${(pathname === '/' || pathname === '') ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
+        <div className="flex md:hidden bg-[var(--color-navbar-bg)] rounded-full p-1 border border-[var(--color-border-main)]">
+          <Link href="/" className={`px-5 py-2 rounded-full text-sm transition-colors ${(pathname === '/' || pathname === '') ? 'bg-[var(--color-hover)] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
             Work
           </Link>
-          <Link href="/info" className={`px-5 py-2 rounded-full text-sm transition-colors ${pathname === '/info' ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
+          <Link href="/info" className={`px-5 py-2 rounded-full text-sm transition-colors ${pathname === '/info' ? 'bg-[var(--color-hover)] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
             Info
           </Link>
         </div>
         
-        {/* Mobile: @ Button con Dropdown */}
-        <div className="flex md:hidden relative" ref={dropdownRef}>
-          <button 
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#2c2b2b] border border-[#3e3d3d] text-[var(--color-text-main)] transition-colors hover:bg-[#464545]"
-          >
-            <span className="text-xl">@</span>
-          </button>
+        {/* Mobile: Actions (Toggle + @ Button) */}
+        <div className="flex items-center md:hidden gap-2">
+          <ThemeToggle />
+          <div className="relative" ref={dropdownRef}>
+            <button 
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-navbar-bg)] border border-[var(--color-border-main)] text-[var(--color-text-main)] transition-colors hover:bg-[var(--color-hover)] shrink-0"
+            >
+              <span className="text-xl">@</span>
+            </button>
 
-          {isDropdownOpen && (
-            <div className="absolute right-0 top-14 w-48 bg-[#2c2b2b] border border-[#3e3d3d] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-50">
-              <a 
-                href="https://www.linkedin.com/in/alejandro-españa-78b217331" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-5 py-4 text-[var(--color-text-main)] hover:bg-[#3e3d3d] transition-colors border-b border-[#3e3d3d] flex items-center justify-between"
-              >
-                LinkedIn <span className="text-sm">↗</span>
-              </a>
-              <a 
-                href="/docs/Hoja de Vida_AlejandroEspaña.pdf" 
-                download="Hoja de Vida_AlejandroEspaña.pdf"
-                className="px-5 py-4 text-[var(--color-text-main)] hover:bg-[#3e3d3d] transition-colors flex items-center justify-between"
-              >
-                CV <span className="text-sm">↓</span>
-              </a>
-            </div>
-          )}
+            {isDropdownOpen && (
+              <div className="absolute right-0 top-14 w-48 bg-[var(--color-surface)] border border-[var(--color-border-main)] rounded-2xl shadow-lg flex flex-col overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                <a 
+                  href="https://www.linkedin.com/in/alejandro-españa-78b217331" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-5 py-4 text-[var(--color-text-main)] hover:bg-[var(--color-hover)] transition-colors border-b border-[var(--color-border-main)] flex items-center justify-between"
+                >
+                  LinkedIn <span className="text-sm">↗</span>
+                </a>
+                <a 
+                  href="/docs/Hoja de Vida_AlejandroEspaña.pdf" 
+                  download="Hoja de Vida_AlejandroEspaña.pdf"
+                  className="px-5 py-4 text-[var(--color-text-main)] hover:bg-[var(--color-hover)] transition-colors flex items-center justify-between"
+                >
+                  CV <span className="text-sm">↓</span>
+                </a>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Desktop Title */}
@@ -93,19 +97,20 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Center Menu */}
-      <div className="hidden md:flex bg-[#2c2b2b] rounded-full p-1 border border-[#3e3d3d]">
-        <Link href="/" className={`px-6 py-2 rounded-full text-sm transition-colors ${(pathname === '/' || pathname === '') ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
+      <div className="hidden md:flex bg-[var(--color-navbar-bg)] rounded-full p-1 border border-[var(--color-border-main)]">
+        <Link href="/" className={`px-6 py-2 rounded-full text-sm transition-colors ${(pathname === '/' || pathname === '') ? 'bg-[var(--color-hover)] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
           Work
         </Link>
-        <Link href="/info" className={`px-6 py-2 rounded-full text-sm transition-colors ${pathname === '/info' ? 'bg-[#464545] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
+        <Link href="/info" className={`px-6 py-2 rounded-full text-sm transition-colors ${pathname === '/info' ? 'bg-[var(--color-hover)] text-[var(--color-text-main)]' : 'text-[var(--color-subtext)] hover:text-[var(--color-text-main)]'}`}>
           Info
         </Link>
       </div>
 
       {/* Desktop Right Links */}
-      <div className="hidden md:flex gap-6 text-sm text-[var(--color-text-main)] uppercase tracking-wide">
-        <a href="/docs/Hoja de Vida_AlejandroEspaña.pdf" download="Hoja de Vida_AlejandroEspaña.pdf" className="hover:text-white transition-colors flex items-center gap-1">CV <span>↓</span></a>
-        <a href="https://www.linkedin.com/in/alejandro-españa-78b217331" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">LinkedIn <span>↗</span></a>
+      <div className="hidden md:flex items-center gap-6 text-sm text-[var(--color-text-main)] uppercase tracking-wide">
+        <ThemeToggle />
+        <a href="/docs/Hoja de Vida_AlejandroEspaña.pdf" download="Hoja de Vida_AlejandroEspaña.pdf" className="hover:text-[var(--color-accent-main)] transition-colors flex items-center gap-1">CV <span>↓</span></a>
+        <a href="https://www.linkedin.com/in/alejandro-españa-78b217331" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent-main)] transition-colors flex items-center gap-1">LinkedIn <span>↗</span></a>
       </div>
 
     </header>
