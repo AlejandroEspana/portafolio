@@ -44,7 +44,7 @@ export const skills = {
   },
   otros: {
     title: "Otros",
-    items: ["Unity", "Postgress", "Mongo", "AWS", "AZURE", "Git", "Github", "Docker"],
+    items: ["Unity", "Postgress", "Mongo", "AWS", "AZURE", "Git", "Github", "Docker", "n8n"],
   },
   habilidadesBlandas: {
     title: "Habilidades Blandas",

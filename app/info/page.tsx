@@ -120,21 +120,8 @@ export default function InfoPage() {
         ))}
       </section>
 
-      {/* 5. Contactos */}
-      <section className="w-full max-w-5xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mb-16">
-        <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-left md:text-center">Contactos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16 mx-auto w-full max-w-3xl">
-          {contacts.map((contact, i) => (
-            <div key={i} className="flex flex-col gap-2 text-center md:text-left items-center md:items-start w-full">
-              <h3 className="text-base text-[var(--color-text-main)]">{contact.name}</h3>
-              <p className="text-sm text-[var(--color-subtext)]">{contact.relation}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. Contactame */}
-      <section className="w-full max-w-4xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mt-16">
+      {/* 5. Contactame */}
+      <section className="w-full max-w-4xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mb-16">
         <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-center border-b border-[var(--color-border-main)] pb-4 mx-auto max-w-max w-full">Contactame</h2>
 
         <div className="flex flex-col md:flex-row gap-16 justify-between items-center text-center">
@@ -146,6 +133,19 @@ export default function InfoPage() {
             <p>{contactMessage.email}</p>
             <p>{contactMessage.location}</p>
           </div>
+        </div>
+      </section>
+
+      {/* 6. Partners */}
+      <section className="w-full max-w-5xl px-6 md:px-16 flex flex-col font-['Protest_Revolution'] tracking-widest mt-16">
+        <h2 className="text-2xl text-[var(--color-text-main)] mb-12 text-left md:text-center">Partners</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16 mx-auto w-full max-w-3xl">
+          {contacts.map((contact, i) => (
+            <div key={i} className="flex flex-col gap-2 text-center md:text-left items-center md:items-start w-full">
+              <h3 className="text-base text-[var(--color-text-main)]">{contact.name}</h3>
+              <p className="text-sm text-[var(--color-subtext)]">{contact.relation}</p>
+            </div>
+          ))}
         </div>
       </section>
 

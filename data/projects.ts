@@ -93,9 +93,9 @@ export const projects: ProjectDetails[] = [
     role: { title: "Fullstack Developer", tasks: ["Frontend", "Backend"] },
     team: ["Alejandro España", "Matheu Ruales Galvis", "Felipe Narvaez"],
     duration: "Completado",
-    summary: ["Plataforma SaaS para gestionar publicaciones simultáneas en varias redes sociales a través de una sola interfaz."],
+    summary: ["Plataforma SaaS para gestionar publicaciones simultáneas en varias redes sociales a través de una sola interfaz. Se desarrollo con el fin de facilitar el trabajo a los community managers y empresas que manejan varias redes sociales."],
     technologies: [
-      { category: "Tecnologías", items: ["React", "Node.js", "Java-Postgress"] },
+      { category: "Tecnologías", items: ["React", "Node.js", "Java-Postgress", "n8n"] },
       { category: "Metodologia", items: ["Scrum"] },
       { category: "Estado", items: ["Completado"] },
     ],
