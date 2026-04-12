@@ -19,7 +19,8 @@ export default function LanguageToggle({ lang }: { lang: string }) {
        newPath = `/${nextLang}${pathname}`;
     }
     
-    document.cookie = `NEXT_LOCALE=${nextLang}; path=/; max-age=31536000`;
+    // Un cookie de sesión (sin max-age) garantiza que volvamos a español al reabrir el navegador
+    document.cookie = `NEXT_LOCALE=${nextLang}; path=/;`;
     router.push(newPath || `/${nextLang}`);
     router.refresh();
   };

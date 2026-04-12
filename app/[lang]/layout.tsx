@@ -27,7 +27,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (localStorage.getItem('theme') === 'light') {
+                if (sessionStorage.getItem('theme') === 'light') {
                   document.documentElement.classList.add('light');
                 }
               } catch (e) {}

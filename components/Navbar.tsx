@@ -11,6 +11,19 @@ export default function Navbar({ lang }: { lang: string }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Easter Egg State
+  const [clickCount, setClickCount] = useState(0);
+  const [isMinecraftMode, setIsMinecraftMode] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("minecraft_mode") === "true") {
+      setIsMinecraftMode(true);
+      document.documentElement.classList.add("minecraft-mode");
+    } else {
+      document.documentElement.classList.remove("minecraft-mode");
+    }
+  }, [pathname]);
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -30,6 +43,26 @@ export default function Navbar({ lang }: { lang: string }) {
   const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
   const isInfo = pathname === `/${lang}/info`;
 
+  const handleNameClick = () => {
+    if (isMinecraftMode) return;
+    
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    
+    if (newCount === 15) {
+      setIsMinecraftMode(true);
+      localStorage.setItem("minecraft_mode", "true");
+      document.documentElement.classList.add("minecraft-mode");
+    }
+  };
+
+  const disableMinecraftMode = () => {
+    setIsMinecraftMode(false);
+    setClickCount(0);
+    localStorage.removeItem("minecraft_mode");
+    document.documentElement.classList.remove("minecraft-mode");
+  };
+
   return (
     <header className="w-full py-6 px-6 md:px-16 sticky top-0 z-50 bg-[var(--color-background-main)]/90 backdrop-blur-sm shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       
@@ -44,6 +77,9 @@ export default function Navbar({ lang }: { lang: string }) {
         </div>
         
         <div className="flex items-center md:hidden gap-2">
+          {isMinecraftMode && (
+            <button onClick={disableMinecraftMode} className="px-2 py-1 font-bold !bg-[#aa0000] !border-[#660000] !text-white !shadow-none animate-pulse mr-2">QUIT</button>
+          )}
           <LanguageToggle lang={lang} />
           <ThemeToggle />
           <div className="relative" ref={dropdownRef}>
@@ -76,21 +112,21 @@ export default function Navbar({ lang }: { lang: string }) {
           </div>
         </div>
 
-        <div className="hidden md:flex flex-col">
-          <Link href={`/${lang}`} className="text-[var(--color-text-main)] text-xl tracking-wide hover:opacity-80 transition-opacity">
+        <div className="hidden md:flex flex-col items-start cursor-pointer text-left" onClick={handleNameClick}>
+          <div className="text-[var(--color-text-main)] text-xl tracking-wide hover:opacity-80 transition-opacity">
             Alejandro España
-          </Link>
-          <span className="text-[var(--color-subtext)] text-sm tracking-widest uppercase mt-1">
+          </div>
+          <span className="text-[var(--color-subtext)] text-sm tracking-widest uppercase mt-1 select-none">
             {lang === 'es' ? 'Desarrollador de Software' : 'Software Developer'}
           </span>
         </div>
       </div>
 
-      <div className="flex flex-col md:hidden w-full">
-        <Link href={`/${lang}`} className="text-[var(--color-text-main)] text-xl tracking-wide hover:opacity-80 transition-opacity">
+      <div className="flex flex-col md:hidden w-full items-start cursor-pointer text-left" onClick={handleNameClick}>
+        <div className="text-[var(--color-text-main)] text-xl tracking-wide hover:opacity-80 transition-opacity">
           Alejandro España
-        </Link>
-        <span className="text-[var(--color-subtext)] text-sm tracking-widest uppercase mt-1">
+        </div>
+        <span className="text-[var(--color-subtext)] text-sm tracking-widest uppercase mt-1 select-none">
           {lang === 'es' ? 'Desarrollador de Software' : 'Software Developer'}
         </span>
       </div>
@@ -105,6 +141,11 @@ export default function Navbar({ lang }: { lang: string }) {
       </div>
 
       <div className="hidden md:flex items-center gap-6 text-sm text-[var(--color-text-main)] uppercase tracking-wide">
+        {isMinecraftMode && (
+          <button onClick={disableMinecraftMode} className="px-4 py-2 font-bold !bg-[#aa0000] !border-[#660000] !text-white !shadow-none animate-pulse">
+            QUIT
+          </button>
+        )}
         <LanguageToggle lang={lang} />
         <ThemeToggle />
         <a href="/docs/Hoja de Vida_AlejandroEspaña.pdf" download="Hoja de Vida_AlejandroEspaña.pdf" className="hover:text-[var(--color-accent-main)] transition-colors flex items-center gap-1">CV <span>↓</span></a>
