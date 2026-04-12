@@ -44,7 +44,7 @@ export default function ProjectStickyNav() {
           href={`#${link.id}`} 
           className={`transition-colors duration-300 ${
             activeSection === link.id 
-              ? "text-[#C0C0C0] scale-105 origin-left" 
+              ? "text-[var(--color-accent-main)] scale-105 origin-left" 
               : "text-[var(--color-subtext)] hover:text-white"
           }`}
         >
