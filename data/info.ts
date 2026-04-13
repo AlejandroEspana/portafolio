@@ -79,7 +79,7 @@ export const infoData = {
       { name: "Carlos Burbano", relation: "Portafolio", link: "https://portafolio-eosin-nine.vercel.app/" },
       { name: "Matheu Ruales", relation: "Portafolio", link: "https://matheu.site" },
       { name: "Bayron Felipe", relation: "Portafolio" },
-      { name: "Luis Esteban Castillo", relation: "Portafolio" },
+      { name: "Luis Esteban Castillo", relation: "Portafolio", link: "https://lxiscxstillo.vercel.app/" },
       { name: "Daniel Fernando Arteaga", relation: "Portafolio" },
     ],
     contactMessage: {
